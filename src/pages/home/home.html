@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-searchbar #search1></ion-searchbar>
+
+  <button ion-button full (click)="getItems(search1.value)">Search</button>
+  
+<ion-list>
+  
+</ion-list>
+  <ion-list>
+    <ion-item *ngFor="let item of videoArr;let i=index;">
+      
+      {{ item }}
+      <ion-card>
+          <iframe width="100%" height="315" [src]="item.videolink | youtube1" frameborder="0" allowfullscreen>
+            </iframe>
+        <img [src]= item?.videoThumbnail/>
+        <ion-card-content>
+          <ion-card-title>
+            {{item?.videoName}}
+            </ion-card-title>
+          <p>
+            {{item?.videoDes}}
+          </p>
+        </ion-card-content>
+        <ion-row no-padding>
+          <ion-col>
+            <button ion-button clear small color="danger" icon-start (click)="downloadPage(i)">
+              <ion-icon name='star'></ion-icon>
+              Download
+            </button>
+          </ion-col>
+  
+    </ion-row>
+      </ion-card>
+    </ion-item>
+  </ion-list>
+
+</ion-content>

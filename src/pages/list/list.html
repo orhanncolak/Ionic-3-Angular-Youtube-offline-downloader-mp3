@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>List</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <button ion-button full (click)="listDir()">list Direct</button>
+  <ion-list>
+    <button ion-item *ngFor="let song of info" (click)="itemTapped($event, song)">
+      <ion-icon [name]="arrow-dropright-circle" item-left></ion-icon>
+      {{song?.name}}
+      <div class="item-note" item-right>
+        {{song?.name}}
+      </div>
+    </button>
+  </ion-list>
+
+</ion-content>

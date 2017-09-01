@@ -16,5 +16,11 @@ $ ionic cordova platform add ios
 $ ionic cordova run ios
 ```
 
+```
+to run server just do
+
+node server.js
+
+```
 Substitute ios for android if not on a Mac.
 
